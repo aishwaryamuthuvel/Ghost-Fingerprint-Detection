@@ -17,10 +17,26 @@ Real fingerprint image dataset provided by the Dutch police has been used for tr
 The proposed algorithm consists of three main subdivisions – Preprocessing, Feature Extraction and Classification. After the basic preprocessing steps, the fingerprint image is divided into image blocks. Features that are based on the local orientation, frequency and mean pixel intensity are extracted from each of the image blocks. The local orientation is calculated using the Sobel operator. Then the local ridge frequency is calculated based on the location orientation obtained. Fourier Transform is used to obtain the first and the second prominent frequencies and orientations. The difference in these prominent frequencies and orientations is used as a feature. The mean intensity of all the pixels that represent the ridges in the input fingerprint is also considered as a feature. The final step was to train classification models (Neural Networks, Random Forest and K-nearest Neighbors) on the features extracted to detect the presence of ghost prints in the input. 
 
 ### Image Pre-processing
+Below are the image pre-processing steps and a corresponding flowchart.
+* For the proposed analysis only grayscale and binary versions of the image were required. Thus as the first preprocessing step, the input RGB image was converted into a grayscale image that had intensity values in the range [0 1].
+* Non-uniform image sizes in the dataset were addressed by padding 1 (analogous to the white backgrounds) to the images. All the images were brought to a uniform size of 768x800. 
+* The next step was to binarize the input images. Otsu’s method was used to compute the threshold value.
+* The binary image is then morphologically opened and closed to remove unwanted discontinuities and noise. 
 
 <p align="center">
-<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Preprocessing.png" width=25% height=25% />
+<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Preprocessing.png" width=75% height=75% />
 </p>
+
+### Feature Extraction
+The presence of ghost fingerprints is mainly characterized by the changes in ridge frequency, orientation and pixel intensity values. The intensity values of the pixels that form the ridges are directly obtained from the grayscale image and the ridge frequency and orientation were calculated using two methods - Sobel operator and Fast Fourier Transform (FFT). 
+
+The preprocessed grayscale and binary versions of the input image are divided into image blocks of size 32x32 and the following five local features were extracted from each image block – ridge frequency and orientation obtained using the Sobel operator, the difference between the first and second prominent frequencies and orientations obtained from Fourier Transform and mean ridge pixel intensity. The mean and standard deviation of the above mentioned five local features were used to form the feature array.
+
+<p align="center">
+<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Feature_extraction.png" width=75% height=75% />
+</p>
+
+
 
 
 
