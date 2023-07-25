@@ -33,8 +33,18 @@ The presence of ghost fingerprints is mainly characterized by the changes in rid
 The preprocessed grayscale and binary versions of the input image are divided into image blocks of size 32x32 and the following five local features were extracted from each image block – ridge frequency and orientation obtained using the Sobel operator, the difference between the first and second prominent frequencies and orientations obtained from Fourier Transform and mean ridge pixel intensity. The mean and standard deviation of the above mentioned five local features were used to form the feature array.
 
 <p align="center">
-<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Feature_extraction.png" width=75% height=75% />
+<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Feature_extraction.png" width=100% height=75% />
 </p>
+
+### Classification Model
+
+Three classification models were trained – Neural Networks, Random Forrest and K-nearest Neighbor with a split of 80-10-10 for training, validation and testing. Below is the table with the performance of the models.
+
+<p align="center">
+<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Results.png" width=100% height=75% />
+</p>
+
+
 
 
 
