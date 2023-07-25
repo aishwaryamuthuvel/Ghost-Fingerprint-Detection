@@ -2,7 +2,7 @@
 
 ## What's a ghost fingerprint?
 
-A Ghost fingerprint occurs when a second unwanted fingerprint overlaps part (or even whole) of the primary or wanted fingerprint as shown in the image below.
+A Ghost fingerprint occurs when a second unwanted fingerprint overlaps part (or even whole) of the primary or wanted fingerprint as shown in the image below. A detailed report on the proposed method for ghost fingerprint detection could be found [here](https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Intro_Biometrics%20-%20Ghost%20Fingerprint%20Detection.pdf).
 
 <p align="center">
 <img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Ghost_fingerprint_example.png" width=25% height=25% />
@@ -41,7 +41,7 @@ The preprocessed grayscale and binary versions of the input image are divided in
 Three classification models were trained – Neural Networks, Random Forrest and K-nearest Neighbor with a split of 80-10-10 for training, validation and testing. Below is the table with the performance of the models.
 
 <p align="center">
-<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Results.png" width=100% height=75% />
+<img src="https://github.com/aishwaryamuthuvel/Ghost-Fingerprint-Detection/blob/main/Results.png" width=50% height=50% />
 </p>
 
 
